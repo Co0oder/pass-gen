@@ -16,6 +16,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { SiteInputComponent } from './core/components/site-input/site-input.component';
 import { GeneratorService } from './core/services/generator.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,13 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
     MatButtonModule,
     ClipboardModule,
     MatCardModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the app is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:30000'
+    })
   ],
   providers: [GeneratorService],
   bootstrap: [AppComponent]
