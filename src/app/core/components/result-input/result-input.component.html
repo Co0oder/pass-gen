@@ -1,0 +1,25 @@
+<mat-form-field>
+    <input 
+        [type]="visibility ? 'text' : 'password'" 
+        matInput 
+        readonly="readonly"
+        [value]="value"    
+    >
+    <button 
+        mat-button 
+        matPrefix 
+        mat-icon-button
+        (click)="copied()"
+        [cdkCopyToClipboard]="value"
+    >
+        <mat-icon>content_copy</mat-icon>
+    </button>
+    <button 
+        mat-button 
+        matSuffix 
+        mat-icon-button 
+        (click)="toggleVisibility()"
+    >
+        <mat-icon>{{visibility ? 'visibility_off': 'visibility'}}</mat-icon>
+    </button>
+</mat-form-field>
