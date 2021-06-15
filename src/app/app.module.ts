@@ -18,12 +18,22 @@ import { GeneratorService } from './core/services/generator.service';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { OptionsGroupComponent } from './core/components/options-group/options-group.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { MenuComponent } from './core/components/menu/menu.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { OptionsService } from './core/services/options.service';
+
 @NgModule({
   declarations: [
     AppComponent,
     ResultInputComponent,
     SecretInputComponent,
-    SiteInputComponent
+    SiteInputComponent,
+    OptionsGroupComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +45,10 @@ import { environment } from '../environments/environment';
     MatButtonModule,
     ClipboardModule,
     MatCardModule,
+    MatSlideToggleModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -43,7 +57,10 @@ import { environment } from '../environments/environment';
       registrationStrategy: 'registerWhenStable:30000'
     })
   ],
-  providers: [GeneratorService],
+  providers: [
+    GeneratorService,
+    OptionsService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

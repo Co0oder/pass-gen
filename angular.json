@@ -36,7 +36,7 @@
               "src/styles.scss",
               "./node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": [],
+            "scripts": ["./src/app/core/helpers/rc4.js"],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },

@@ -1,0 +1,30 @@
+<mat-slide-toggle 
+    color="primary" 
+    [checked]="optionsState.latin" 
+    (toggleChange)="setNewOption({latin: !optionsState.latin, cyrillic : true})"
+>Latin</mat-slide-toggle>
+<mat-slide-toggle 
+    color="primary" 
+    [checked]="optionsState.cyrillic" 
+    (toggleChange)="setNewOption({cyrillic: !optionsState.cyrillic, latin: true})"
+>Cyrillic</mat-slide-toggle>
+<mat-slide-toggle 
+    color="primary" 
+    [checked]="optionsState.numbers" 
+    (toggleChange)="setNewOption({numbers: !optionsState.numbers})"
+>Numbers</mat-slide-toggle>
+<mat-slide-toggle 
+    color="primary" 
+    [checked]="optionsState.lowercase" 
+    (toggleChange)="setNewOption({lowercase: !optionsState.lowercase})"
+>Lowercase</mat-slide-toggle>
+<mat-slide-toggle 
+    color="primary" 
+    [checked]="optionsState.uppercase" 
+    (toggleChange)="setNewOption({uppercase: !optionsState.uppercase})"
+>Uppercase</mat-slide-toggle>
+<mat-slide-toggle 
+    color="primary" 
+    [checked]="optionsState.specsimbols" 
+    (toggleChange)="setNewOption({specsimbols: !optionsState.specsimbols})"
+>Specsimbols</mat-slide-toggle>
