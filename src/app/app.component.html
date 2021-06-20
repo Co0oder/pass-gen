@@ -1,22 +1,29 @@
 <mat-toolbar class="toolbar" color="primary">
   <span>PASWORD GENERATOR</span>
-  <button 
-    mat-icon-button (click)="drawer.toggle()"
-    class="settings"
-  >
-    <mat-icon>settings</mat-icon>
-  </button>
+  <div class="button-wrapper">
+    <button 
+      mat-icon-button (click)="showInfo()"
+      class="info"
+    >
+      <mat-icon>info</mat-icon>
+    </button>
+    <button 
+      mat-icon-button (click)="drawer.toggle()"
+      class="settings"
+    >
+      <mat-icon>settings</mat-icon>
+    </button>
+  </div>
 </mat-toolbar>
 <mat-drawer-container class="container" hasBackdrop="true">
   <mat-drawer position="end" #drawer mode="over">
     <app-options-group></app-options-group>
   </mat-drawer>
   <mat-drawer-content>
-    <app-menu></app-menu>
     <div class="content_wraper">
       <app-site-input (link)="link = $event"></app-site-input>
       <app-secret-input (secret)="secret = $event"></app-secret-input>
-      <button mat-stroked-button color="primary" (click)="generate()">Generate</button>
+      <button mat-stroked-button color="primary" (click)="generate()">Генерувати</button>
       <app-result-input></app-result-input>
     </div>
   </mat-drawer-content>

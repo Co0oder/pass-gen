@@ -8,7 +8,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SecretInputComponent implements OnInit {
   @Output() secret = new EventEmitter<string>()
   public visibility = false;
-  public value = 'password';
+  public value = '';
 
   constructor() { }
 

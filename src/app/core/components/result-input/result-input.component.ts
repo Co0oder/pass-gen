@@ -9,7 +9,7 @@ import { GeneratorService } from '../../services/generator.service';
 })
 export class ResultInputComponent {
   public visibility = false;
-  public value = 'password';
+  public value: string = '';
 
   constructor(
     private generator: GeneratorService,

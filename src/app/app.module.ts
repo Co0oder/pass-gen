@@ -21,10 +21,13 @@ import { environment } from '../environments/environment';
 import { OptionsGroupComponent } from './core/components/options-group/options-group.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { MenuComponent } from './core/components/menu/menu.component';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { OptionsService } from './core/services/options.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { InfoModalComponent } from './core/components/info-modal/info-modal.component';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -33,7 +36,7 @@ import { OptionsService } from './core/services/options.service';
     SecretInputComponent,
     SiteInputComponent,
     OptionsGroupComponent,
-    MenuComponent
+    InfoModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +52,9 @@ import { OptionsService } from './core/services/options.service';
     MatToolbarModule,
     MatMenuModule,
     MatSidenavModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatListModule,
     ToastrModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,

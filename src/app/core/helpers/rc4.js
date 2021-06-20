@@ -71,6 +71,16 @@ function LowerUpperCaser(options) {
 	}
 }
 
+function countShoftPoints(string){
+	return string.split('').reduce((acc, char) => acc+= char.charCodeAt(0) , 0) % 16;
+}
+
+function shift(str,n){
+	chars = str.split('');
+	for(i=0;i<n;i++) chars.unshift(chars.pop());
+	return chars.join('');
+}
+
 function generatePasword(PRString, options) {
 	const alphabetByOptions = [
 		alphabets.link,
@@ -87,7 +97,10 @@ function generatePasword(PRString, options) {
 		const tempAlphabet = alphabetByOptions[index%alphabetByOptions.length];
 		password += caseChanger(tempAlphabet[+number% tempAlphabet.length]);
 	}
-	return password; 
+
+	const shiftPoints = countShoftPoints(alphabets.link);
+	const shiftedPassword = shift(password, shiftPoints);
+	return shiftedPassword; 
 
 }
 
