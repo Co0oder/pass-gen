@@ -36,7 +36,9 @@
               "src/styles.scss",
               "./node_modules/ngx-toastr/toastr.css"
             ],
-            "scripts": ["./src/app/core/helpers/rc4.js"],
+            "scripts": [
+              "./src/app/core/helpers/rc4.js"
+            ],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
           },
@@ -134,5 +136,8 @@
       }
     }
   },
-  "defaultProject": "pass-gen"
+  "defaultProject": "pass-gen",
+  "cli": {
+    "analytics": "52a97e74-0904-4918-9910-e4b2f73552e4"
+  }
 }

@@ -22,10 +22,22 @@
             img{
                 width: 100%;
             }
+
+            .two_image{
+                display: flex;
+                justify-content: space-between;
+        
+                img{
+                    margin: 10px;
+                    width: 40%;
+                }
+            }
             .settings_bar_img{
                 width: 40%;
                 border: 2px solid black;
             }
         }
     }
+
+    
 }
